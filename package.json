@@ -1,6 +1,6 @@
 {
   "name": "@danielvindax/eth-json-rpc-infura",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "json-rpc-engine middleware for Infura's endpoints",
   "repository": {
     "type": "git",
@@ -58,6 +58,7 @@
     "ts-node": "^10.7.0",
     "typescript": "~4.8.4"
   },
+  "packageManager": "yarn@3.6.0+sha512.418e45c2268c4d6b69a28f3939084b5853d5f392c43c0b5588bd1995a96e328414ae4b7777a8980c64bad4328c52586ff879b289f98ae65372a55fa4d0ff70dd",
   "engines": {
     "node": "^18.18 || ^20.14 || >=22"
   },
@@ -69,6 +70,5 @@
     "allowScripts": {
       "@lavamoat/preinstall-always-fail": false
     }
-  },
-  "packageManager": "yarn@3.6.0+sha512.418e45c2268c4d6b69a28f3939084b5853d5f392c43c0b5588bd1995a96e328414ae4b7777a8980c64bad4328c52586ff879b289f98ae65372a55fa4d0ff70dd"
+  }
 }
