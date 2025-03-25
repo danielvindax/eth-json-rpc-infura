@@ -5,18 +5,18 @@ Infura's REST endpoints.
 
 ## Installation
 
-`yarn add @metamask/eth-json-rpc-infura`
+`yarn add @danielvindax/eth-json-rpc-infura`
 
 or
 
-`npm install @metamask/eth-json-rpc-infura`
+`npm install @danielvindax/eth-json-rpc-infura`
 
 ## Usage
 
 ### Creating a provider
 
 ```js
-const { createInfuraProvider } = require('@metamask/eth-json-rpc-infura');
+const { createInfuraProvider } = require('@danielvindax/eth-json-rpc-infura');
 const EthQuery = require('eth-query');
 
 const provider = createInfuraProvider({
@@ -36,7 +36,7 @@ ethQuery.blockNumber((err, result) => {
 ### Creating `json-rpc-engine` middleware
 
 ```js
-const { createInfuraMiddleware } = require('@metamask/eth-json-rpc-infura');
+const { createInfuraMiddleware } = require('@danielvindax/eth-json-rpc-infura');
 const JsonRpcEngine = require('json-rpc-engine');
 
 const engine = new JsonRpcEngine();
