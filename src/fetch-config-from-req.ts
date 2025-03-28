@@ -56,12 +56,7 @@ export function fetchConfigFromReq({
   }
 
   return {
-    fetchUrl:
-      network === 'allchain-mainnet'
-        ? 'https://mainnet-rpc.alltra.global'
-        : network === 'allchain-testnet'
-        ? 'https://testnet-rpc.alltra.global'
-        : `https://${network}.infura.io/v3/${projectId}`,
+    fetchUrl: getFetchUrl(network, projectId),
     fetchParams: {
       method: 'POST',
       headers,
@@ -70,6 +65,25 @@ export function fetchConfigFromReq({
   };
 }
 
+/**
+ * Constructs the fetch URL for the given network and project ID.
+ * @param network - The Infura-supported network.
+ * @param projectId - The Infura project ID.
+ * @returns The constructed fetch URL.
+ */
+function getFetchUrl(
+  network: InfuraJsonRpcSupportedNetwork,
+  projectId: string,
+): string {
+  switch (network) {
+    case 'allchain-mainnet':
+      return 'https://mainnet-rpc.alltra.global';
+    case 'allchain-testnet':
+      return 'https://testnet-rpc.alltra.global';
+    default:
+      return `https://${network}.infura.io/v3/${projectId}`;
+  }
+}
 /**
  * Strips out extra keys from a request object that could be rejected by strict
  * nodes like parity.
