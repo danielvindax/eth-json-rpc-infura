@@ -59,6 +59,8 @@ export function fetchConfigFromReq({
     fetchUrl:
       network === 'allchain-mainnet'
         ? 'https://mainnet-rpc.alltra.global'
+        : network === 'allchain-testnet'
+        ? 'https://testnet-rpc.alltra.global'
         : `https://${network}.infura.io/v3/${projectId}`,
     fetchParams: {
       method: 'POST',
