@@ -56,7 +56,7 @@ export function fetchConfigFromReq({
   }
 
   return {
-    fetchUrl: `https://${network}.infura.io/v3/${projectId}`,
+    fetchUrl: getFetchUrl(network, projectId),
     fetchParams: {
       method: 'POST',
       headers,
@@ -80,4 +80,22 @@ function normalizeReq(
     method: req.method,
     params: req.params,
   };
+}
+
+/**
+ * Constructs the fetch URL for the given network and project ID.
+ * @param network - The Infura-supported network.
+ * @param projectId - The Infura project ID.
+ * @returns The constructed fetch URL.
+ */
+function getFetchUrl(
+  network: InfuraJsonRpcSupportedNetwork,
+  projectId: string,
+): string {
+  switch (network) {
+    case '5dax-mainnet':
+      return 'https://mainnet-rpc.5dax.com';
+    default:
+      return `https://${network}.infura.io/v3/${projectId}`;
+  }
 }
